@@ -1,0 +1,16 @@
+{
+  "name": "bookmarker_demo",
+  "version": "1.0.0",
+  "description": "\"bookmark manager using backbonejs/node/mongodb stack\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Saleem",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^2.5",
+    "mongoose": "^3.5.5"
+  }
+}
