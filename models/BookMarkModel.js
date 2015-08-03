@@ -9,12 +9,23 @@ var BookMarkSchema = new Schema({
   url   : { type  : String}
 });
 
+//NOTE: In Mongodb, save the entries like bookmarkentry/Folder entry directly in to db without sharing the references.
+/* this is folder schema i have added to store bookmark inside the folder.
+var FolderSchema = new Schema ({
+ name : {type :String},
+ entries : [ BookMarkSchema ]
+});
+*/
+
 var BookMark = mongoose.model('BookMark',BookMarkSchema);
 
 //connect to db called bookmark-db
-mongoose.connect("mongodb://localhost/bookmark-db");
+//mongoose.connect("mongodb://localhost/bookmark-db");
 
 exports.add = function(bookmark,cb){
+  if(typeof bookmark.title =='undefined' || typeof bookmark.url == 'undefined' ) {
+   cb(new Error("empty values.."));
+  }
   var bmark = new BookMark();
   bmark.title = bookmark.title;
   bmark.url  = bookmark.url;

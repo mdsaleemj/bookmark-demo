@@ -12,6 +12,10 @@ app.use(express.bodyParser());
 app.use(express.static(path.join(__dirname,'public')));	
 
 
+//connect to db called bookmark-db
+mongoose.connect("mongodb://localhost/bookmark-db");
+
+
 //Routes
 app.get('/api',function(req,res){
   res.send("api running.....",200) 
