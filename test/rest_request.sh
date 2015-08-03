@@ -6,4 +6,4 @@ curl -i  -X DELETE http://localhost:20020/api/bookmark/{$id}
 
 #To get the list of bookmark
 
-culr -i http://localhost:20020/api/bookmark
+curl -i http://localhost:20020/api/bookmark
